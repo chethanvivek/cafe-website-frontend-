@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew & Bloom | Artisanal Coffee & Bakery</title>
+
+  <!-- Google Fonts: Playfair Display (Serif Heading) & Poppins (Sans Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. STICKY NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">
+        <span class="logo-icon" aria-hidden="true">&#9749;</span>
+        <span class="logo-text">Brew &amp; Bloom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#specials" class="nav-link">Specials</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#visit" class="nav-link">Visit Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO / WELCOME SECTION
+         ========================================================================== -->
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-tag">Welcome to Brew &amp; Bloom</span>
+        <h1 class="hero-title">Freshly Brewed Coffee &amp; Artisanal Delights</h1>
+        <p class="hero-tagline">
+          Step into our cozy corner for handcrafted coffee, freshly baked French pastries, and warm conversations in a calm floral setting.
+        </p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="#visit" class="btn btn-outline">Find Our Café</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. MENU SECTION (3 Categories: Coffee, Bakery, Snacks - 6 Items Total)
+         ========================================================================== -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Crafted with Passion</span>
+          <h2 class="section-title">Our Handcrafted Menu</h2>
+          <p class="section-description">
+            Explore our carefully curated selection of single-origin coffees, oven-fresh baked goods, and savory cafe bites.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+          <!-- Item 1: Coffee -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/espresso.jpg" alt="Rich dark crema espresso served in a ceramic cup" class="menu-img">
+              <span class="category-badge">Coffee</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Classic Double Espresso</h3>
+                <span class="menu-price">&#8377;140</span>
+              </div>
+              <p class="menu-desc">A bold, concentrated double shot extracted from 100% organic Arabica beans with a thick, golden crema.</p>
+            </div>
+          </article>
+
+          <!-- Item 2: Coffee -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/cappuccino.jpg" alt="Creamy cappuccino topped with delicate latte art foam" class="menu-img">
+              <span class="category-badge">Coffee</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Velvet Cappuccino</h3>
+                <span class="menu-price">&#8377;180</span>
+              </div>
+              <p class="menu-desc">Harmonious balance of bold espresso, silky steamed milk, and a dense cloud of micro-foam dusted with cocoa.</p>
+            </div>
+          </article>
+
+          <!-- Item 3: Bakery -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/croissant.jpg" alt="Golden flaky French butter croissant on a wooden board" class="menu-img">
+              <span class="category-badge">Bakery</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Artisan Butter Croissant</h3>
+                <span class="menu-price">&#8377;160</span>
+              </div>
+              <p class="menu-desc">Authentic French layered pastry rolled with premium cultured butter, baked fresh every morning to crisp perfection.</p>
+            </div>
+          </article>
+
+          <!-- Item 4: Bakery -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/blueberry-muffin.jpg" alt="Freshly baked blueberry muffin with caramelized crumble top" class="menu-img">
+              <span class="category-badge">Bakery</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Wild Blueberry Muffin</h3>
+                <span class="menu-price">&#8377;150</span>
+              </div>
+              <p class="menu-desc">Tender vanilla-infused sponge cake loaded with juicy Himalayan wild blueberries and finished with cinnamon streusel.</p>
+            </div>
+          </article>
+
+          <!-- Item 5: Snacks -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/club-sandwich.jpg" alt="Toasted triple decker grilled cheese and vegetable club sandwich" class="menu-img">
+              <span class="category-badge">Snacks</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Grilled Garden Club Sandwich</h3>
+                <span class="menu-price">&#8377;220</span>
+              </div>
+              <p class="menu-desc">Multigrain sourdough layered with grilled paneer, English cucumber, vine tomatoes, mozzarella, and herb pesto.</p>
+            </div>
+          </article>
+
+          <!-- Item 6: Snacks -->
+          <article class="menu-card">
+            <div class="menu-image-wrapper">
+              <img src="images/garlic-bread.jpg" alt="Toasted herb garlic baguette slices with melted cheese and parsley" class="menu-img">
+              <span class="category-badge">Snacks</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3 class="menu-item-name">Herb Garlic Sourdough</h3>
+                <span class="menu-price">&#8377;170</span>
+              </div>
+              <p class="menu-desc">Crunchy artisan baguette brushed generously with roasted garlic butter, fresh parsley, and cracked sea salt.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. TODAY'S SPECIALS SECTION (3 Highlighted Cards with "Special" Badge)
+         ========================================================================== -->
+    <section id="specials" class="specials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Chef's Signature Creations</span>
+          <h2 class="section-title">Today's Specials</h2>
+          <p class="section-description">
+            Exclusive seasonal drinks and confectionery specials hand-crafted by our head barista and pastry chef today.
+          </p>
+        </div>
+
+        <div class="specials-grid">
+          <!-- Special Item 1 -->
+          <article class="special-card">
+            <div class="special-image-wrapper">
+              <img src="images/special-mocha.jpg" alt="Decadent hazelnut iced mocha topped with whipped cream and cocoa" class="special-img">
+              <span class="special-badge">&#9733; Special</span>
+            </div>
+            <div class="special-info">
+              <div class="special-header">
+                <h3 class="special-item-name">Spiced Hazelnut Mocha</h3>
+                <span class="special-price">&#8377;240</span>
+              </div>
+              <p class="special-desc">Single-origin espresso blended with toasted hazelnut praline syrup, dark Belgian chocolate, and Madagascar vanilla.</p>
+              <span class="special-tag">&#9830; Seasonal Favorite</span>
+            </div>
+          </article>
+
+          <!-- Special Item 2 -->
+          <article class="special-card">
+            <div class="special-image-wrapper">
+              <img src="images/special-pastry.jpg" alt="Flaky fruit Danish pastry filled with rich vanilla custard and fresh berries" class="special-img">
+              <span class="special-badge">&#9733; Special</span>
+            </div>
+            <div class="special-info">
+              <div class="special-header">
+                <h3 class="special-item-name">Berry Custard Danish</h3>
+                <span class="special-price">&#8377;210</span>
+              </div>
+              <p class="special-desc">Delicate spiral pastry filled with velvety mascarpone pastry cream and topped with honey-glazed forest berries.</p>
+              <span class="special-tag">&#9830; Freshly Baked Batch</span>
+            </div>
+          </article>
+
+          <!-- Special Item 3 -->
+          <article class="special-card">
+            <div class="special-image-wrapper">
+              <img src="images/special-waffle.jpg" alt="Golden crispy Belgian waffle garnished with strawberries and chocolate" class="special-img">
+              <span class="special-badge">&#9733; Special</span>
+            </div>
+            <div class="special-info">
+              <div class="special-header">
+                <h3 class="special-item-name">Salted Caramel Waffle</h3>
+                <span class="special-price">&#8377;260</span>
+              </div>
+              <p class="special-desc">Belgian pearl sugar waffle crisped to golden amber, drizzled with warm sea-salt caramel and toasted crushed almonds.</p>
+              <span class="special-tag">&#9830; Limited Daily Quantity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. CUSTOMER REVIEWS SECTION (3 Review Cards with Star Ratings)
+         ========================================================================== -->
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Kind Words from Guests</span>
+          <h2 class="section-title">Customer Reviews</h2>
+          <p class="section-description">
+            Read what fellow coffee lovers, students, and morning regulars love about their time at Brew &amp; Bloom.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">
+              &ldquo;Brew &amp; Bloom is my daily sanctuary before college lectures. Their cappuccino is the smoothest in the city, and the calming acoustic music makes it an ideal study environment.&rdquo;
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">AS</div>
+              <div class="reviewer-details">
+                <h3 class="reviewer-name">Aarav Sharma</h3>
+                <span class="reviewer-role">CSE Student &amp; Daily Guest</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">
+              &ldquo;The butter croissants are genuinely Parisian—flaky layers on the outside and wonderfully soft inside. Pair it with their hazelnut mocha, and you have heaven on a plate!&rdquo;
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">AI</div>
+              <div class="reviewer-details">
+                <h3 class="reviewer-name">Ananya Iyer</h3>
+                <span class="reviewer-role">Graphic Designer &amp; Food Blogger</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">
+              &ldquo;Outstanding hospitality and pristine aesthetics. The sourdough garlic bread and grilled club sandwich are top notch. Excellent spot for casual client catch-ups or solo reading afternoons.&rdquo;
+            </p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">RV</div>
+              <div class="reviewer-details">
+                <h3 class="reviewer-name">Rohan Verma</h3>
+                <span class="reviewer-role">Software Engineer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. VISIT US (OPENING HOURS & LOCATION SECTION)
+         ========================================================================== -->
+    <section id="visit" class="visit-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Plan Your Visit</span>
+          <h2 class="section-title">Opening Hours &amp; Location</h2>
+          <p class="section-description">
+            Come say hello, soak in the aroma of fresh roast, and find your favorite corner table.
+          </p>
+        </div>
+
+        <div class="visit-layout">
+          <!-- Left Column: Opening Hours Table & Quick Table Inquiry -->
+          <div class="visit-column hours-column">
+            <div class="hours-card">
+              <h3 class="block-title">&#128338; Operating Hours</h3>
+              <p class="hours-note">Fresh roasts start dripping 15 minutes prior to opening every day.</p>
+              
+              <table class="hours-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Day</th>
+                    <th scope="col">Timings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday &ndash; Thursday</td>
+                    <td>7:30 AM &ndash; 10:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Friday &ndash; Saturday</td>
+                    <td>7:30 AM &ndash; 11:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>8:00 AM &ndash; 10:00 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Quick Inquiry / Reservation Form (Design Only) -->
+              <div class="inquiry-box">
+                <h4 class="inquiry-title">Table Reservation &amp; Inquiries</h4>
+                <form class="inquiry-form" action="#" method="get" onsubmit="return false;">
+                  <div class="form-group">
+                    <label for="guest-name">Your Full Name</label>
+                    <input type="text" id="guest-name" name="guest-name" class="form-control" placeholder="e.g. Priyanshu Singh" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="guest-email">Email Address</label>
+                    <input type="email" id="guest-email" name="guest-email" class="form-control" placeholder="e.g. priyanshu@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="guest-guests">Number of Guests</label>
+                    <select id="guest-guests" name="guest-guests" class="form-control">
+                      <option value="1">1 Person (Solo Work/Relax)</option>
+                      <option value="2" selected>2 Persons</option>
+                      <option value="4">3 - 4 Persons (Group)</option>
+                      <option value="6">5+ Persons (Celebration)</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">Reserve a Table</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Location Details & Embedded Google Map -->
+          <div class="visit-column location-column">
+            <div class="location-card">
+              <h3 class="block-title">&#128205; Find Us Here</h3>
+              
+              <div class="contact-details">
+                <div class="contact-item">
+                  <span class="contact-icon">&#127969;</span>
+                  <div class="contact-text">
+                    <strong>Address:</strong>
+                    <p>42 Green Valley Boulevard, Indiranagar, Bengaluru, Karnataka 560038, India</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <span class="contact-icon">&#128222;</span>
+                  <div class="contact-text">
+                    <strong>Phone:</strong>
+                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <span class="contact-icon">&#9993;</span>
+                  <div class="contact-text">
+                    <strong>Email:</strong>
+                    <p><a href="mailto:hello@brewandbloom.in">hello@brewandbloom.in</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Embedded Google Map Placeholder -->
+              <div class="map-container">
+                <iframe
+                  title="Brew and Bloom Cafe Google Maps Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9855375549065!2d77.63884841529712!3d12.972772590855218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a70e70a327%3A0x6b6377e81fa2f0f4!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="260"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       7. FOOTER SECTION
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <span class="logo-icon">&#9749;</span> Brew &amp; Bloom
+        </a>
+        <p class="footer-tagline">
+          Warm brews, blooming conversations, and artisanal delicacies made with heart every single day.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#specials">Today's Specials</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#visit">Visit &amp; Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="footer-heading">Connect With Us</h4>
+        <p class="social-note">Follow our daily bake stories and brewing tutorials:</p>
+        <div class="social-links">
+          <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Brew and Bloom on Instagram">Instagram</a>
+          <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Brew and Bloom on Facebook">Facebook</a>
+          <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Brew and Bloom on Twitter">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Brew &amp; Bloom Caf&eacute;. All rights reserved.</p>
+        <p class="footer-credit">Handcrafted for B.Tech Web Development Lab Assignment.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

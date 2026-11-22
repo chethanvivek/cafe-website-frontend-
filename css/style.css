@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   1. CSS RESET & GLOBAL SETTINGS
+   ========================================================================== */
+
+/* Universal box-sizing reset so padding and borders do not alter element dimensions */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   2. CSS VARIABLES (COLORS, FONTS & ELEVATIONS)
+   ========================================================================== */
+
+:root {
+  /* Warm Coffee & Cream Palette */
+  --color-espresso: #2a1b15;       /* Deep rich dark roast */
+  --color-roast: #4a3428;          /* Medium warm roast */
+  --color-mocha: #634832;          /* Earthy warm brown */
+  --color-accent: #c07a3e;         /* Warm caramel gold accent */
+  --color-accent-hover: #a3622c;   /* Darker amber for button hover */
+  --color-cream: #faf5ee;          /* Soft milky cream background */
+  --color-cream-alt: #f3eae0;      /* Slightly deeper cream for alternating sections */
+  --color-card-bg: #ffffff;        /* Pure white for crisp card backgrounds */
+  --color-text-main: #2b231f;      /* High contrast dark coffee text */
+  --color-text-muted: #6f6259;     /* Soft warm grey for subtitles & descriptions */
+  --color-border: #e6dcce;         /* Subtle border line */
+
+  /* Google Font Families */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Shadows & Transitions */
+  --shadow-sm: 0 2px 8px rgba(42, 27, 21, 0.06);
+  --shadow-md: 0 8px 24px rgba(42, 27, 21, 0.08);
+  --shadow-lg: 0 14px 32px rgba(42, 27, 21, 0.12);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+
+/* ==========================================================================
+   3. BASE LAYOUT & TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+/* Centered content wrapper with responsive max-width */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Reusable section title styling */
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 48px auto;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-espresso);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* Button Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(192, 122, 62, 0.35);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--color-espresso);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   4. STICKY NAVIGATION BAR
+   ========================================================================== */
+
+/* Sticky header locks to viewport top during scroll */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(250, 245, 238, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Brand logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-espresso);
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* Navigation items using Flexbox */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-roast);
+  position: relative;
+  padding: 6px 2px;
+}
+
+/* Underline accent on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   5. HERO / WELCOME SECTION
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  /* Dark dual gradient overlay on hero image for optimal text readability */
+  background: linear-gradient(rgba(26, 15, 10, 0.75), rgba(26, 15, 10, 0.65)),
+              url('../images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: rgba(192, 122, 62, 0.25);
+  border: 1px solid rgba(192, 122, 62, 0.6);
+  color: #f7d2b2;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #f0e6dd;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================================================
+   6. MENU SECTION (Coffee, Bakery, Snacks)
+   ========================================================================== */
+
+.menu-section {
+  padding: 96px 0;
+  background-color: var(--color-cream);
+}
+
+/* 3-column Flexbox grid with wrapping */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.menu-card {
+  flex: 1 1 calc(33.333% - 28px);
+  min-width: 280px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Card hover lift effect */
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: var(--color-cream-alt);
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-img {
+  transform: scale(1.05);
+}
+
+.category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(42, 27, 21, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.menu-info {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.menu-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.menu-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.menu-desc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   7. TODAY'S SPECIALS SECTION
+   ========================================================================== */
+
+.specials-section {
+  padding: 96px 0;
+  background-color: var(--color-cream-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.specials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.special-card {
+  flex: 1 1 calc(33.333% - 28px);
+  min-width: 280px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: 2px solid #ecd6bf;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.special-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.special-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--color-cream);
+}
+
+.special-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.special-card:hover .special-img {
+  transform: scale(1.05);
+}
+
+/* Distinctive highlighted ribbon badge for Today's Specials */
+.special-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, var(--color-accent), #db8b46);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(192, 122, 62, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.special-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.special-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.special-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-espresso);
+}
+
+.special-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.special-desc {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.special-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-roast);
+  background-color: var(--color-cream-alt);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+}
+
+
+/* ==========================================================================
+   8. CUSTOMER REVIEWS SECTION
+   ========================================================================== */
+
+.reviews-section {
+  padding: 96px 0;
+  background-color: var(--color-cream);
+}
+
+.reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.review-card {
+  flex: 1 1 calc(33.333% - 28px);
+  min-width: 280px;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Gold star rating characters */
+.review-stars {
+  color: #e59819;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  color: var(--color-text-main);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-cream-alt);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+}
+
+.reviewer-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.reviewer-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   9. VISIT US (OPENING HOURS & LOCATION SECTION)
+   ========================================================================== */
+
+.visit-section {
+  padding: 96px 0;
+  background-color: var(--color-cream-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Two equal columns using Flexbox */
+.visit-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.visit-column {
+  flex: 1 1 calc(50% - 16px);
+  min-width: 320px;
+}
+
+.hours-card,
+.location-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-espresso);
+  margin-bottom: 10px;
+}
+
+.hours-note {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+/* Opening Hours Table Styling */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 28px;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+.hours-table th {
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  font-weight: 600;
+}
+
+.hours-table td:last-child {
+  font-weight: 500;
+  color: var(--color-roast);
+}
+
+.hours-table tr:hover td {
+  background-color: var(--color-cream);
+}
+
+/* Table reservation inquiry form */
+.inquiry-box {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.inquiry-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-espresso);
+  margin-bottom: 14px;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-roast);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  color: var(--color-text-main);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(192, 122, 62, 0.15);
+}
+
+/* Contact information list */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact-icon {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  line-height: 1.3;
+}
+
+.contact-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-espresso);
+}
+
+.contact-text p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.contact-text a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Google Map responsive wrapper */
+.map-container {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-top: auto;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   10. FOOTER SECTION
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-espresso);
+  color: #ded1c5;
+  padding: 64px 0 0 0;
+  border-top: 3px solid var(--color-accent);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+.footer-brand {
+  flex: 2 1 320px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footer-tagline {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 360px;
+  color: #bdaea1;
+}
+
+.footer-nav,
+.footer-social {
+  flex: 1 1 200px;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #ded1c5;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+.social-note {
+  font-size: 0.88rem;
+  color: #bdaea1;
+  margin-bottom: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  background-color: #1f130e;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: #9c8a7d;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+/* ==========================================================================
+   11. MEDIA QUERIES (TABLET & MOBILE RESPONSIVENESS)
+   ========================================================================== */
+
+/* Tablet Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 14px 0;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .menu-card,
+  .special-card,
+  .review-card {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 260px;
+  }
+
+  .visit-column {
+    flex: 1 1 100%;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile Screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 48px 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .menu-card,
+  .special-card,
+  .review-card {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .menu-image-wrapper,
+  .special-image-wrapper {
+    height: 190px;
+  }
+
+  .hours-card,
+  .location-card {
+    padding: 20px 16px;
+  }
+
+  .hours-table th,
+  .hours-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
