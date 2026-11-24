@@ -1,3 +1,7 @@
+Student Details:
+name : Chethan Vivek Sai Sundar Sukkireddi
+Niat Id: N26V01A0337
+Section: 5
 # Brew & Bloom — Artisanal Café & Bakery Website
 
 A responsive, single-page website for **Brew & Bloom**, a modern artisanal café and bakery. This project was developed as a First-Year B.Tech Computer Science and Engineering (CSE) Web Development lab assignment.
